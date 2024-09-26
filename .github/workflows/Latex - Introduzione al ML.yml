@@ -22,9 +22,9 @@ jobs:
       - name: Build PDF
         uses: dante-ev/latex-action@latest
         with:
-          root_file: ./Introduzione\ al\ ML/Introduzione\ al\ ML.tex
+          root_file: "./Introduzione al ML/Introduzione al ML.tex"
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: Introduzione\ al\ ML.pdf
-          path: ./Introduzione\ al\ ML/Introduzione\ al\ ML.pdf
+          name: "Introduzione al ML.tex"
+          path: "./Introduzione al ML/Introduzione al ML.pdf"
