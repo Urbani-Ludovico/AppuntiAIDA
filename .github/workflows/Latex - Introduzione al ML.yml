@@ -1,0 +1,29 @@
+name: "Build Introduzione al ML"
+
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - ./Introduzione\ al\ ML/*
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ./Introduzione\ al\ ML/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/moderncv/debian-texlive-docker:main
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build PDF
+        run: latexmk ./Introduzione\ al\ ML/Introduzione\ al\ ML.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: thesis.pdf
+          path: ./Introduzione\ al\ ML/Introduzione\ al\ ML.pdf
