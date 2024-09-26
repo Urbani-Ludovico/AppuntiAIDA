@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@latest
+        uses: actions/checkout@v4
       - name: Build PDF
         uses: dante-ev/latex-action@latest
         with:
           root_file: ./Introduzione\ al\ ML/Introduzione\ al\ ML.tex
       - name: Upload PDF
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v4
         with:
           name: Introduzione\ al\ ML.pdf
           path: ./Introduzione\ al\ ML/Introduzione\ al\ ML.pdf
